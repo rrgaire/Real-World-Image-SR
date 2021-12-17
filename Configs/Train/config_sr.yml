@@ -1,0 +1,72 @@
+# path
+path:
+  resume_state:     # path to the state file for resuming training
+  pretrain_G: checkpoints/models/560_G.pth  # path to the pre-trained generator if exists
+  log: logs
+  tb_logger: tb_logger
+  checkpoints:
+    models: checkpoints/models
+    states: checkpoints/states
+    val_image_dir: checkpoints/val_results
+
+# dataset
+datasets:
+  train:
+    name: DIV2K
+    HR_dir: /content/drive/MyDrive/MajorProject/Dataset/SR/DIV2K/div2k_hr
+    LR_dir: /content/drive/MyDrive/MajorProject/Dataset/SR/DIV2K/div2k_lr
+    batch_size: 16
+    shuffle: True
+    HR_patch: 128
+    flip: True
+    rotation: True
+    n_workers: 8
+    scale: 4
+  valid:
+    name: Set14
+    testY: True
+    HR_dir: /content/drive/MyDrive/Colab Notebooks/Test/Set14/GTmod12
+    LR_dir: /content/drive/MyDrive/Colab Notebooks/Test/Set14/LRbicx4
+
+# networks
+network_G:
+  mode: CNA
+  in_nc: 3
+  out_nc: 3
+  nf: 64
+  nb: 23
+  gc: 32
+  scale: 4
+  norm_type:
+  act_type: leakyrelu
+  upsample_mode: upconv
+
+network_D:
+  mode: CNA
+  norm_type: batch
+  act_type: leakyrelu
+  in_nc: 3
+  base_nf: 64
+
+# training details
+train:
+  lr_G: 0.0001
+  lr_D: 0.0001
+
+  b1_G: 0.9
+  b2_G: 0.999
+  b1_D: 0.9
+  b2_D: 0.999
+
+  lr_steps: [50000, 100000, 200000, 300000]
+  lr_gamma: 0.5
+
+  wt_pix: 0.01
+  wt_fea: 1
+  wt_gan: 0.005
+
+  niter: 500000
+  val_freq: 20
+
+  save_step: 20
+  print_freq: 5

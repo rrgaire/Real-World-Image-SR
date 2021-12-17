@@ -1,0 +1,31 @@
+# data paths
+LR_dir: /content/drive/MyDrive/Dataset/Test/RealSR/REAL_LR/*
+SR_dir: /content/drive/MyDrive/results/
+
+# models paths
+r2b_model_path: /content/drive/MyDrive/Models/R2B_Model/R2B_model.pth
+sr_model_path: /content/drive/MyDrive/Models/SR_Model/SR_model.pth
+
+# network informations
+network_R2B:
+  mode: CNA
+  in_nc: 3
+  out_nc: 3
+  nf: 64
+  nb: 8
+  gc: 32
+  scale: 1
+  norm_type:
+  act_type: relu
+
+network_SR:
+  mode: CNA
+  in_nc: 3
+  out_nc: 3
+  nf: 64
+  nb: 23
+  gc: 32
+  scale: 4
+  norm_type:
+  act_type: leakyrelu
+  upsample_mode: upconv
