@@ -9,7 +9,8 @@ from SR_Network.networks.generator import Generator as sr_gen
 import utils.utils as util
 
 
-cfg_test = util.load_yaml('Config/Test/test_config.yml')
+config_path = sys.argv[1]
+cfg_test = util.load_yaml(config_path)
 
 r2b_model_path = cfg_test['r2b_model_path']
 sr_model_path = cfg_test['sr_model_path']
