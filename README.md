@@ -109,7 +109,7 @@ Fig 2: Qualitative comparison of our proposed model with other state-of-the-art 
 # Citation
 ```bash
 @InProceedings{10.1007/978-981-16-4177-0_75,
-author="Gaire, Rebati Raman and Subedi, Ronast and Sharma, Ashim and Subedi, Shishir and     Ghimire, Sharad Kumar and Shakya, Subarna",
+author="Gaire, Rebati Raman and Subedi, Ronast and Sharma, Ashim and Subedi, Shishir and Ghimire, Sharad Kumar and Shakya, Subarna",
 title="GAN-Based Two-Step Pipeline for Real-World Image Super-Resolution",
 booktitle="ICT with Intelligent Applications",
 year="2022",
